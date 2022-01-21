@@ -1,0 +1,73 @@
+
+
+<div class="container">
+
+    <div class="row mt-5 p-0 m-0">
+        
+        <h1 class="text-center"><strong>Estadísticas de cursada</strong></h1>
+    
+        <h3 class="my-4 text-center">Las siguientes estadísticas muestran el desempeño en las distintas áreas de la carrera. Se calculó un promedio de las notas para cada área.</h3>
+        <p><strong>Las áreas con nota 0 aún no fueron cursadas</strong></p>
+        
+        <!-- Desempeño academico por área de estudio -->
+        <div class="container p-3 p-0 m-0 mb-5 card">
+
+            <h2 class="text-center">Desempeño académico</h2>
+            <ngx-charts-bar-vertical
+                [view]="view_bar"
+                scheme="cool"
+                [results]="areas"
+                [gradient]="false"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+            </ngx-charts-bar-vertical>
+
+        </div>
+
+        <!-- organizacion de la carrera -->
+        <div class="row p-0 m-0 mt-3">
+
+            <h2>
+                Organización de la carrera
+            </h2>
+
+
+            <div class="container p-3 p-0 m-0 mb-5 card">
+
+                <h2 class="text-center">Áreas de estudio</h2>
+                <ngx-charts-pie-chart
+                    [view]="view_pie"
+                    scheme="cool"
+                    [results]="single"
+                    [gradient]="gradient"
+                    animations="true"
+                    [legend]="showLegend"
+                    [legendPosition]="legendPosition"
+                    [labels]="showLabels"
+                    [doughnut]="isDoughnut"
+                    (select)="onSelect($event)"
+                    (activate)="onActivate($event)"
+                    (deactivate)="onDeactivate($event)">
+
+                    <ng-template #tooltipTemplate let-model="model">
+			            <span class="m-none">{{model.name}}</span><br>
+			            <span class="chart__tooltip-sub-label">
+                            {{model.value}}%
+                        </span>
+		            </ng-template>
+
+                </ngx-charts-pie-chart>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

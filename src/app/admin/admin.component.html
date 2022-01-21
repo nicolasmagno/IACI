@@ -1,0 +1,30 @@
+
+<div class="container">
+    <!-- buscador de materias -->
+    <div class="row mt-5 p-0 m-0">
+
+        <h1 class="text-center my-5"><strong>Panel de administración</strong></h1>
+
+        <h2 class="text-center">Buscador de materias</h2>
+
+        <div class="row mb-5 mt-3 px-2 p-0 m-0 justify-content-center align-items-center">
+            <div class="col-lg-8 input-div py-2 px-3" style="display: inline-flex;">
+                <mat-icon style="color: grey;" class="p-0 m-0 align-self-center">search</mat-icon>
+                <input [(ngModel)] = "busqueda" name="busqueda" type="text" class="form-control input" placeholder="Buscar materia...">
+            </div>
+        </div>
+
+
+        <div class="row p-0 m-0">
+
+            <div class="col-lg-10 card card-mat offset-lg-1 mb-5 py-4 px-4" *ngFor="let mat of materias" [class.fondo-aprobado]="mat.aprobada === 'true'" (click)="dialogMateria(mat)">
+                <h2><strong>{{mat.nombre}}</strong> </h2>
+                <h3>{{mat.area}}</h3>
+                <p class="texto-desc">{{mat.info}}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

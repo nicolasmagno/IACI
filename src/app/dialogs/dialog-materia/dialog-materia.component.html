@@ -1,0 +1,34 @@
+
+<div class="row p-0 m-0 justify-content-center">
+
+    <div class="col-12">
+
+        <form [formGroup]="materiaForm" (ngSubmit)="onSubmit()">
+
+            <h1 class="text-center">{{data.nombre}}</h1>
+
+            <mat-form-field class="example-full-width" appearance="fill" class="col-12 p-0 m-0">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre de la materia..." formControlName="nombre" value="{{data.nombre}}">
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width" appearance="fill" class="col-12 p-0 m-0">
+                <mat-label>Contenido</mat-label>
+                <input matInput placeholder="Contenidos mínimos..." formControlName="info" value="{{data.info}}"> 
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill" class="col-12 p-0 m-0">
+                <mat-label>Nota final</mat-label>
+                <input matInput placeholder="0" formControlName="nota" value="{{data.nota}}">
+            </mat-form-field>
+
+            <mat-dialog-actions class="col-12 justify-content-center p-0 m-0">
+                <button mat-button mat-dialog-close (click)="onNoClick()" type="button">Cancelar</button>
+                <button mat-raised-button color="primary" [disabled]="!materiaForm.valid" type="submit">Editar</button>
+            </mat-dialog-actions>
+
+        </form>
+
+    </div>
+
+</div>
