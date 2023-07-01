@@ -6,8 +6,6 @@ En el apartado Estadísticas se puede ver el promedio de notas por área de estu
 
 La información es obtenida de web services en php dentro de un hosting, la base de datos utilizada es MySql y el deploy de la aplicación fue hecho en Firebase hosting.
 
-Disponible en: https://iaci-b082a.web.app
-
 Página principal:
 
 ![IACI - Opera 21_01_2022 02_13_04 a  m](https://user-images.githubusercontent.com/55226492/150470282-b9c113ec-38cd-4a9d-aa54-ada75e530792.png)
